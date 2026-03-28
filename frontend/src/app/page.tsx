@@ -64,45 +64,45 @@ export default function Home() {
             Quantum <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-teal-400">Circuit</span>
           </h1>
         </motion.div>
-        <p className="text-zinc-400 font-medium max-w-xl">
+        <p className="text-zinc-500 font-medium max-w-xl">
           Visualizing the future of computation. Design, simulate, and analyze quantum states in real-time with pixel-perfect precision.
         </p>
       </header>
 
       {/* Editor Section */}
-      <section className="grid lg:grid-cols-3 gap-8">
+      <section className="grid lg:grid-cols-3 gap-8 relative z-10">
         {/* Sidebar: Gate Selector */}
         <div className="lg:col-span-1 flex flex-col gap-6">
-          <div className="glass p-6 flex flex-col gap-4">
-            <h2 className="text-sm font-bold uppercase tracking-widest text-zinc-500 flex items-center gap-2">
-              <Binary size={16} /> Available Gates
+          <div className="glass p-8 flex flex-col gap-6 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-600 flex items-center gap-3">
+              <Binary size={14} className="text-purple-500" /> Available Gates
             </h2>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-4">
               {availableGates.map((gate) => (
                 <button
                   key={gate}
                   onClick={() => addGate(gate)}
-                  className="flex flex-col items-center gap-1 group"
+                  className="flex flex-col items-center gap-2 group"
                 >
                   <CircuitGate type={gate} />
-                  <span className="text-[10px] text-zinc-500 font-mono group-hover:text-zinc-300 transition-colors">{gate}</span>
+                  <span className="text-[10px] text-zinc-600 font-black font-mono group-hover:text-purple-400 transition-colors uppercase tracking-widest">{gate}</span>
                 </button>
               ))}
             </div>
           </div>
 
-          <div className="glass p-6 flex flex-col gap-4">
-            <h2 className="text-sm font-bold uppercase tracking-widest text-zinc-500 flex items-center gap-2">
-               <Info size={16} /> Actions
+          <div className="glass p-8 flex flex-col gap-6">
+            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-600 flex items-center gap-3">
+               <Info size={14} className="text-teal-400" /> Control Panel
             </h2>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4">
               <button
                 onClick={runCircuit}
                 disabled={gates.length === 0 || loading}
-                className="w-full h-12 bg-white text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-zinc-200 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed group"
+                className="w-full h-14 bg-white text-black font-black uppercase tracking-widest text-xs rounded-2xl flex items-center justify-center gap-3 hover:bg-neutral-200 transition-all active:scale-95 disabled:opacity-20 disabled:cursor-not-allowed group shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(255,255,255,0.2)]"
               >
-                {loading ? <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" /> : <Play size={20} fill="currentColor" />}
-                Run Simulation
+                {loading ? <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" /> : <Play size={18} fill="currentColor" />}
+                Execute Circuit
               </button>
               <button
                 onClick={clearCircuit}
