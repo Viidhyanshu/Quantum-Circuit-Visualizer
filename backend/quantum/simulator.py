@@ -9,6 +9,10 @@ def run_circuit(gates):
             qc.h(0)
         elif gate == "X":
             qc.x(0)
+        elif gate == "Y":
+            qc.y(0)
+        elif gate == "Z":
+            qc.z(0)
         elif gate == "CNOT":
             qc.cx(0, 1)
 
