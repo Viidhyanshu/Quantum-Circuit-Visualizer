@@ -11,15 +11,15 @@ A high-performance, interactive quantum circuit simulation environment designed 
 
 ## ✨ Key Features
 
-- **🌑 Ultra-Dark Aesthetic**: Custom-built dark theme with mesh gradients, high-contrast glassmorphism, and a pulsing "Quantum" atmosphere.
-- **🏗️ Interactive Circuit Builder**: A reactive drag-and-drop-style gate editor with real-time feedback and smooth animations.
-- **📈 Advanced Result Visualization**: Dynamic, animated probability charts illustrating measurement counts and basis state distributions.
-- **⚡ Qiskit Powered**: Leverages the power of Qiskit's `qasm_simulator` for high-fidelity quantum hardware emulation.
-- **🎨 Minimalist Developer Experience**: Fully typed with TypeScript, styled with Tailwind CSS 4, and powered by Next.js 15.
+- ** Ultra-Dark Aesthetic**: Custom-built dark theme with mesh gradients, high-contrast glassmorphism, and a pulsing "Quantum" atmosphere.
+- ** Interactive Circuit Builder**: A reactive drag-and-drop-style gate editor with real-time feedback and smooth animations.
+- ** Advanced Result Visualization**: Dynamic, animated probability charts illustrating measurement counts and basis state distributions.
+- ** Qiskit Powered**: Leverages the power of Qiskit's `qasm_simulator` for high-fidelity quantum hardware emulation.
+- ** Minimalist Developer Experience**: Fully typed with TypeScript, styled with Tailwind CSS 4, and powered by Next.js 15.
 
 ---
 
-## 🏗️ Project Architecture
+##  Project Architecture
 
 ```bash
 .
@@ -88,12 +88,6 @@ Simulations are executed across **1024 shots** to provide statistically signific
 - **Frontend**: Next.js, Framer Motion, Lucide React, Tailwind CSS 4.
 - **Backend**: Flask (Python), Flask-CORS.
 - **Simulation Layer**: Qiskit, Qiskit-Aer.
-
----
-
-## 🤝 Contributing
-
-This project is a visual playground for quantum enthusiasts. Pull requests are welcome for new gate implementations, Bloch sphere visualizations, or UI refinements.
 
 ---
 
