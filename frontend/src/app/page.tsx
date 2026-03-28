@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1>Quantum Circuit Visualizer </h1>
+      <h1>Quantum Circuit Visualizer.</h1>
 
       <button onClick={runCircuit}>
         Run Circuit
