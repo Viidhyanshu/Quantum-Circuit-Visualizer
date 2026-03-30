@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-quantum-purple: #c084fc;
-  --color-quantum-teal: #2dd4bf;
-  --color-quantum-rose: #f43f5e;
-  --color-quantum-bg: #030303;
+  --color-quantum-purple: #9333ea;
+  --color-quantum-teal: #0d9488;
+  --color-quantum-rose: #e11d48;
+  --color-quantum-bg: #fafafa;
 }
+
 
 :root {
   --background: #fafafa;
