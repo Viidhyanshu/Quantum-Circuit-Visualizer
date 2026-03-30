@@ -9,12 +9,13 @@ interface CircuitGateProps {
 }
 
 const gateStyles: Record<string, string> = {
-  H: "bg-purple-500/20 border-purple-500/50 text-purple-200",
-  X: "bg-blue-500/20 border-blue-500/50 text-blue-200",
-  Y: "bg-green-500/20 border-green-500/50 text-green-200",
-  Z: "bg-teal-500/20 border-teal-500/50 text-teal-200",
-  CNOT: "bg-rose-500/20 border-rose-500/50 text-rose-200",
+  H: "bg-purple-500/10 border-purple-500/40 text-purple-700",
+  X: "bg-blue-500/10 border-blue-500/40 text-blue-700",
+  Y: "bg-green-500/10 border-green-500/40 text-green-700",
+  Z: "bg-teal-500/10 border-teal-500/40 text-teal-700",
+  CNOT: "bg-rose-500/10 border-rose-500/40 text-rose-700",
 };
+
 
 export default function CircuitGate({ type, onRemove, isDraggable }: CircuitGateProps) {
   return (
@@ -24,7 +25,7 @@ export default function CircuitGate({ type, onRemove, isDraggable }: CircuitGate
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0.8, opacity: 0 }}
       whileHover={{ scale: 1.05, y: -2 }}
-      className={`relative group w-12 h-12 flex items-center justify-center border-2 rounded-lg font-bold text-sm backdrop-blur-md cursor-pointer transition-all ${gateStyles[type] || "bg-gray-500/20 border-gray-500/50"}`}
+      className={`relative group w-12 h-12 flex items-center justify-center border-2 rounded-lg font-bold text-sm backdrop-blur-md cursor-pointer transition-all ${gateStyles[type] || "bg-muted/10 border-muted/50 text-muted"}`}
     >
       {type}
       
@@ -40,7 +41,8 @@ export default function CircuitGate({ type, onRemove, isDraggable }: CircuitGate
         </button>
       )}
 
-      <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity bg-white/5 pointer-events-none" />
+      <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity bg-foreground/5 pointer-events-none" />
     </motion.div>
   );
 }
+

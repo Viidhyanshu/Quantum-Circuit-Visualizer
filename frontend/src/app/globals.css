@@ -8,13 +8,15 @@
 }
 
 :root {
-  --background: #030303;
-  --foreground: #ffffff;
-  --primary: #c084fc;
-  --secondary: #2dd4bf;
-  --accent: #f43f5e;
-  --card: rgba(10, 10, 10, 0.7);
-  --border: rgba(255, 255, 255, 0.08);
+  --background: #fafafa;
+  --foreground: #09090b;
+  --primary: #9333ea;
+  --secondary: #0d9488;
+  --accent: #e11d48;
+  --card: rgba(255, 255, 255, 0.7);
+  --border: rgba(0, 0, 0, 0.08);
+  --muted: #3f3f46;
+  --ring: #9333ea;
 }
 
 body {
@@ -25,7 +27,7 @@ body {
   position: relative;
 }
 
-/* Mesh Gradient Background */
+/* Mesh Gradient Background (Optimized for Light Mode) */
 body::before {
   content: "";
   position: fixed;
@@ -35,10 +37,10 @@ body::before {
   height: 100vh;
   z-index: -1;
   background: 
-    radial-gradient(at 0% 0%, rgba(192, 132, 252, 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(45, 212, 191, 0.1) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(244, 63, 94, 0.05) 0px, transparent 50%);
-  opacity: 0.8;
+    radial-gradient(at 0% 0%, var(--primary) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, var(--secondary) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, var(--accent) 0px, transparent 50%);
+  opacity: 0.05;
 }
 
 @layer components {
@@ -47,11 +49,7 @@ body::before {
     backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid var(--border);
     border-radius: 1.5rem;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-  }
-
-  .glow-text {
-    text-shadow: 0 0 15px rgba(192, 132, 252, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
   }
 
   .glow-border {
@@ -76,7 +74,7 @@ body::before {
 
 .circuit-line {
   height: 2px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--border);
   position: relative;
 }
 
@@ -87,8 +85,9 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(192, 132, 252, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
   animation: sweep 4s infinite linear;
+  opacity: 0.15;
 }
 
 @keyframes sweep {
@@ -101,14 +100,17 @@ body::before {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #222;
+  background: var(--muted);
   border-radius: 10px;
+  opacity: 0.3;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #333;
+  background: var(--primary);
 }
+
+
 
 
