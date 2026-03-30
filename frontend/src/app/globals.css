@@ -1,16 +1,23 @@
 @import "tailwindcss";
 
+/* Completely disable Tailwind 4.0 dark mode variant generation */
+@variant dark (false);
+
 @theme {
+  --color-background: #fafafa !important;
+  --color-foreground: #09090b !important;
+  
   --color-quantum-purple: #9333ea;
   --color-quantum-teal: #0d9488;
   --color-quantum-rose: #e11d48;
   --color-quantum-bg: #fafafa;
 }
 
-
 :root {
-  --background: #fafafa;
-  --foreground: #09090b;
+  color-scheme: light !important;
+  --background: #fafafa !important;
+  --foreground: #09090b !important;
+
   --primary: #9333ea;
   --secondary: #0d9488;
   --accent: #e11d48;
@@ -20,13 +27,24 @@
   --ring: #9333ea;
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
+/* Hard override for any persistent dark mode media queries */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #fafafa !important;
+    --foreground: #09090b !important;
+    color-scheme: light !important;
+  }
+}
+
+html, body {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
   font-family: var(--font-geist-sans), sans-serif;
   overflow-x: hidden;
   position: relative;
 }
+
+
 
 /* Mesh Gradient Background (Optimized for Light Mode) */
 body::before {
@@ -37,7 +55,7 @@ body::before {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: 
+  background:
     radial-gradient(at 0% 0%, var(--primary) 0px, transparent 50%),
     radial-gradient(at 100% 0%, var(--secondary) 0px, transparent 50%),
     radial-gradient(at 50% 100%, var(--accent) 0px, transparent 50%);
@@ -56,8 +74,8 @@ body::before {
   .glow-border {
     position: relative;
     border: 1px solid transparent;
-    background-image: linear-gradient(var(--card), var(--card)), 
-                      linear-gradient(45deg, var(--primary), var(--secondary));
+    background-image: linear-gradient(var(--card), var(--card)),
+      linear-gradient(45deg, var(--primary), var(--secondary));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
@@ -68,9 +86,20 @@ body::before {
 }
 
 @keyframes pulse {
-  0% { opacity: 0.3; transform: scale(0.98); }
-  50% { opacity: 0.6; transform: scale(1); }
-  100% { opacity: 0.3; transform: scale(0.98); }
+  0% {
+    opacity: 0.3;
+    transform: scale(0.98);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: scale(0.98);
+  }
 }
 
 .circuit-line {
@@ -92,26 +121,30 @@ body::before {
 }
 
 @keyframes sweep {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--background);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--muted);
   border-radius: 10px;
   opacity: 0.3;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
-
-
-
-
