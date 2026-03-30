@@ -9,12 +9,19 @@ interface CircuitGateProps {
 }
 
 const gateStyles: Record<string, string> = {
-  H: "bg-purple-500/10 border-purple-500/40 text-purple-700",
-  X: "bg-blue-500/10 border-blue-500/40 text-blue-700",
-  Y: "bg-green-500/10 border-green-500/40 text-green-700",
-  Z: "bg-teal-500/10 border-teal-500/40 text-teal-700",
-  CNOT: "bg-rose-500/10 border-rose-500/40 text-rose-700",
+  H: "bg-purple-600 border-purple-500 shadow-[0_0_15px_rgba(147,51,234,0.3)] text-white",
+  X: "bg-blue-600 border-blue-500 shadow-[0_0_15px_rgba(37,99,235,0.3)] text-white",
+  Y: "bg-green-600 border-green-500 shadow-[0_0_15px_rgba(22,163,74,0.3)] text-white",
+  Z: "bg-teal-600 border-teal-500 shadow-[0_0_15px_rgba(13,148,136,0.3)] text-white",
+  I: "bg-zinc-600 border-zinc-500 shadow-[0_0_15px_rgba(82,82,91,0.3)] text-white",
+  S: "bg-amber-500 border-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] text-white",
+  T: "bg-orange-500 border-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.3)] text-white",
+  Sdg: "bg-amber-700 border-amber-600 shadow-[0_0_15px_rgba(180,83,9,0.3)] text-white",
+  Tdg: "bg-orange-700 border-orange-600 shadow-[0_0_15px_rgba(194,65,12,0.3)] text-white",
+  Swap: "bg-indigo-600 border-indigo-500 shadow-[0_0_15px_rgba(79,70,229,0.3)] text-white",
+  CNOT: "bg-rose-600 border-rose-500 shadow-[0_0_15px_rgba(225,29,72,0.3)] text-white",
 };
+
 
 
 export default function CircuitGate({ type, onRemove, isDraggable }: CircuitGateProps) {

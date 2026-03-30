@@ -13,8 +13,21 @@ def run_circuit(gates):
             qc.y(0)
         elif gate == "Z":
             qc.z(0)
+        elif gate == "S":
+            qc.s(0)
+        elif gate == "T":
+            qc.t(0)
+        elif gate == "I":
+            qc.i(0)
+        elif gate == "Swap":
+            qc.swap(0, 1)
+        elif gate == "Sdg":
+            qc.sdg(0)
+        elif gate == "Tdg":
+            qc.tdg(0)
         elif gate == "CNOT":
             qc.cx(0, 1)
+
 
     qc.measure_all()
 

@@ -47,7 +47,8 @@ export default function Home() {
     }
   };
 
-  const availableGates = ["H", "X", "Y", "Z", "CNOT"];
+  const availableGates = ["H", "X", "Y", "Z", "S", "T", "I", "Swap", "Sdg", "Tdg", "CNOT"];
+
 
   return (
     <main className="min-h-screen p-8 lg:p-12 max-w-7xl mx-auto flex flex-col gap-10">
