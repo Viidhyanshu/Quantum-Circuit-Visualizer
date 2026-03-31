@@ -10,8 +10,6 @@ A high-performance, interactive quantum circuit simulation environment designed 
 ---
 
 ## ✨ Key Features
-
-- ** Ultra-Dark Aesthetic**: Custom-built dark theme with mesh gradients, high-contrast glassmorphism, and a pulsing "Quantum" atmosphere.
 - ** Interactive Circuit Builder**: A reactive drag-and-drop-style gate editor with real-time feedback and smooth animations.
 - ** Advanced Result Visualization**: Dynamic, animated probability charts illustrating measurement counts and basis state distributions.
 - ** Qiskit Powered**: Leverages the power of Qiskit's `qasm_simulator` for high-fidelity quantum hardware emulation.
