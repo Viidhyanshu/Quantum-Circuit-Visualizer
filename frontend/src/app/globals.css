@@ -6,7 +6,7 @@
 @theme {
   --color-background: #fafafa !important;
   --color-foreground: #09090b !important;
-  
+
   --color-quantum-purple: #9333ea;
   --color-quantum-teal: #0d9488;
   --color-quantum-rose: #e11d48;
@@ -36,7 +36,8 @@
   }
 }
 
-html, body {
+html,
+body {
   background-color: var(--background) !important;
   color: var(--foreground) !important;
   font-family: var(--font-geist-sans), sans-serif;
